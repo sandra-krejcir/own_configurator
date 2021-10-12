@@ -1,0 +1,103 @@
+body {
+  display: grid;
+}
+
+.theColors {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 2vw;
+}
+
+.dragon-color {
+  width: 7vw;
+  height: 7vw;
+  cursor: pointer;
+}
+
+#color1 {
+  background-image: url("/4f7662.png");
+}
+
+#color2 {
+  background-image: url("/393a3b.png");
+}
+
+#color3 {
+  background-image: url("/77548f.png");
+}
+
+#color4 {
+  background-image: url("/656985.png");
+}
+
+#color5 {
+  background-image: url("/875848.png");
+}
+
+#color6 {
+  background-image: url("/902929.png");
+}
+
+#color7 {
+  background-image: url("/a76a99.png");
+}
+
+#color8 {
+  background-image: url("/ea8361.png");
+}
+
+#colorWheel {
+  cursor: pointer;
+}
+
+.horns {
+  background-image: url("/horns.png");
+  background-size: cover;
+  width: 7vw;
+  height: 7vw;
+  cursor: pointer;
+}
+
+.theCrystals {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 2vw;
+}
+
+.crystal-option {
+  width: 7vw;
+  height: 7vw;
+  cursor: pointer;
+}
+
+#crystal1 {
+  background-image: url("neck_crystals.png");
+  background-size: cover;
+}
+
+#crystal2 {
+  background-image: url("leg_crystals.png");
+  background-size: cover;
+}
+
+#crystal3 {
+  background-image: url("wing_crystals.png");
+  background-size: cover;
+}
+
+#crystal4 {
+  background-image: url("tail_crystals.png");
+  background-size: cover;
+}
+
+.saddle {
+  background-image: url("/saddle.png");
+  background-size: cover;
+  width: 7vw;
+  height: 7vw;
+  cursor: pointer;
+}
