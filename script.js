@@ -25,9 +25,12 @@ function setColor(element, color) {
 }
 
 function init() {
+  setColor(document.querySelector("#body"), "grey");
+  setColor(document.querySelector("#wings"), "grey");
+  setColor(document.querySelector("#eye"), "grey");
+
   document.querySelector("#body").addEventListener("click", (event) => {
     setColor(document.querySelector("#body"), selectedColor);
-    setColor(document.querySelector("#wrong"), "white");
   });
 
   document.querySelector("#wings").addEventListener("click", (event) => {
