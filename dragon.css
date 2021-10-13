@@ -13,8 +13,7 @@ body {
 
 h1 {
   font-family: "Eagle Lake", cursive;
-  font-size: 3rem;
-  margin-left: 4.2vw;
+  font-size: 2.5vw;
   margin-bottom: 5vw;
 }
 
@@ -39,22 +38,30 @@ h2 {
 #scroll {
   background-image: url(images/scroll.png);
   background-size: cover;
-  width: 36vw;
-  height: 50vw;
+  width: 33vw;
+  height: 45vw;
   z-index: 2;
   position: fixed;
   margin-left: -5vw;
+  margin-top: -5vw;
 }
 #scroll2 {
   background-image: url(images/scroll2.png);
   background-size: cover;
-  width: 36vw;
-  height: 50vw;
+  width: 33vw;
+  height: 45vw;
   z-index: 20;
   position: fixed;
   margin-left: -5vw;
-  margin-top: -50vw;
+  margin-top: -57.1vw;
   pointer-events: none;
+}
+
+#scrollPart {
+  overflow: hidden;
+
+  height: 100vw;
+  margin-top: 5vw;
 }
 
 #scrollable {
@@ -62,9 +69,7 @@ h2 {
   z-index: 10;
   width: 36vw;
   height: 50vw;
-  top: 5vw;
   padding-left: 2vw;
-  overflow: hidden;
 }
 
 .theColors {
