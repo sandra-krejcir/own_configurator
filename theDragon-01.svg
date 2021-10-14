@@ -56,7 +56,7 @@
       }
 
       .highlight :hover {
-      opacity: 5%;
+      opacity: 85%;
       cursor: pointer;
       }
     </style>

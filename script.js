@@ -78,8 +78,10 @@ function toggleOption(event) {
     const firstFrame = document
       .querySelector(`[data-feature='${feature}'`)
       .getBoundingClientRect();
-    firstFrame.x = 220;
-    firstFrame.y = 220;
+    if (feature === "saddle") {
+      firstFrame.x = 220;
+      firstFrame.y = 220;
+    }
     console.log("First frame", firstFrame);
 
     const lastFrame = target.getBoundingClientRect();
