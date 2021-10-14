@@ -56,11 +56,11 @@
       }
 
       .highlight :hover {
-      opacity: 75%;
+      opacity: 5%;
       cursor: pointer;
       }
     </style>
-    <mask id="mask" x="0" y="0" width="1920" height="1920" maskUnits="userSpaceOnUse">
+    <mask id="mask" width="1920" height="1920" maskUnits="userSpaceOnUse">
       <g id="Layer_13Opacity_Mask" data-name="Layer 13Opacity Mask">
         <image id="Layer_13Opacity_Mask-2" data-name="Layer 13Opacity Mask" width="1920" height="1920" xlink:href="theDragon9.png"/>
       </g>

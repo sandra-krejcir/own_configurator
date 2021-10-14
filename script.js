@@ -74,8 +74,13 @@ function toggleOption(event) {
       .querySelector(`[data-feature='${feature}'`)
       .classList.remove("hide");
 
+    const firstFrame = document
+      .querySelector(`[data-feature='${feature}'`)
+      .getBoundingClientRect();
+    console.log("First frame", firstFrame);
+
     const lastFrame = target.getBoundingClientRect();
-    //console.log("First frame", firstFrame);
+    console.log("Last frame", lastFrame);
 
     const newPic = document.createElement("img");
     newPic.src = `images/${feature}.png`;
@@ -90,15 +95,8 @@ function toggleOption(event) {
 
     console.log("newPic", newPic);
 
-    const firstFrame = document
-      .querySelector(`[data-feature='${feature}'`)
-      .getBoundingClientRect();
-    //console.log("Last frame", lastFrame);
-
     const deltaX = firstFrame.left - lastFrame.left + 30;
     const deltaY = firstFrame.top - lastFrame.top + 60;
-    /*const deltaWidth = firstFrame.width / lastFrame.width;
-    const deltaHeight = firstFrame.height / lastFrame.height;*/
 
     document.querySelector(`[data-feature='${feature}'`).classList.add("hide");
 
