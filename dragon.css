@@ -241,3 +241,41 @@ h3 {
   cursor: pointer;
   border-radius: 14vw;
 }
+
+#cirkle {
+  background-image: url(images/circle.png);
+  background-size: cover;
+  width: 8vw;
+  height: 8vw;
+  margin-top: -18vw;
+  margin-left: 88vw;
+
+  animation: glow_kf 20s infinite linear;
+}
+
+#cirkle2 {
+  position: relative;
+  z-index: 100;
+  background-image: url(images/circle.png);
+  background-size: cover;
+  width: 8vw;
+  height: 8vw;
+  margin-top: -39vw;
+  margin-left: 61vw;
+
+  animation: glow_kf 20s infinite linear;
+}
+
+@keyframes glow_kf {
+  0% {
+    filter: drop-shadow(0px 0px 0.1vw rgb(119, 0, 255));
+    transform: rotate(0deg);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 0.2vw rgb(0, 255, 234));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 0.3vw rgb(255, 0, 221));
+    transform: rotate(360deg);
+  }
+}
