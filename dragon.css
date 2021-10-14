@@ -1,5 +1,4 @@
 body {
-  /* position: relative; */
   width: 100%;
   height: 100%;
   margin: 0;
@@ -27,7 +26,7 @@ h2 {
 #grid_conatiner {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin-top: 13vw;
+  margin-top: 5vw;
 }
 
 #dragonPart {
@@ -59,19 +58,8 @@ h2 {
   z-index: 2;
   position: fixed;
   margin-left: -5vw;
-  margin-top: -14vw;
+  margin-top: -5vw;
 }
-/* #scroll2 {
-  background-image: url(images/scroll2.png);
-  background-size: cover;
-  width: 33vw;
-  height: 45vw;
-  z-index: 20;
-  position: fixed;
-  margin-left: -5vw;
-  margin-top: -57.1vw;
-  pointer-events: none;
-} */
 
 #scrollPart {
   overflow: hidden;
