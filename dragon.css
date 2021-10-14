@@ -147,29 +147,54 @@ h2 {
   border-radius: 6vw;
 }
 
-#crystal1 {
-  background-image: url("images/neck_crystals.png");
+.neckCrystals {
+  background-image: url("images/neckCrystals.png");
   background-size: cover;
 }
 
-#crystal2 {
-  background-image: url("images/leg_crystals.png");
+.legCrystals {
+  background-image: url("images/legCrystals.png");
   background-size: cover;
 }
 
-#crystal3 {
-  background-image: url("images/wing_crystals.png");
+.wingCrystals {
+  background-image: url("images/wingCrystals.png");
   background-size: cover;
 }
 
-#crystal4 {
-  background-image: url("images/tail_crystals.png");
+.tailCrystals {
+  background-image: url("images/tailCrystals.png");
   background-size: cover;
 }
 
 .saddle {
   background-image: url("images/saddle.png");
   background-size: cover;
+  width: 7vw;
+  height: 7vw;
+  cursor: pointer;
+  border-radius: 14vw;
+}
+
+.hornsX {
+  z-index: 200;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  border-radius: 6vw;
+}
+
+.neckCrystalsX,
+.legCrystalsX,
+.wingCrystalsX,
+.tailCrystalsX {
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  border-radius: 6vw;
+}
+
+.saddleX {
   width: 7vw;
   height: 7vw;
   cursor: pointer;
