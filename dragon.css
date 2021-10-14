@@ -266,6 +266,10 @@ h3 {
   animation: glow_kf 20s infinite linear;
 }
 
+.glow {
+  animation: glow_kf 20s infinite linear;
+}
+
 @keyframes glow_kf {
   0% {
     filter: drop-shadow(0px 0px 0.1vw rgb(119, 0, 255));

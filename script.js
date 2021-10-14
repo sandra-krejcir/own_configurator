@@ -68,6 +68,7 @@ function toggleOption(event) {
 
   if (features[feature]) {
     target.classList.add("chosen");
+    target.classList.add("glow");
     console.log(features[feature]);
 
     document
@@ -77,6 +78,8 @@ function toggleOption(event) {
     const firstFrame = document
       .querySelector(`[data-feature='${feature}'`)
       .getBoundingClientRect();
+    firstFrame.x = 220;
+    firstFrame.y = 220;
     console.log("First frame", firstFrame);
 
     const lastFrame = target.getBoundingClientRect();
@@ -124,6 +127,7 @@ function toggleOption(event) {
   } else {
     features[feature] = false;
     target.classList.remove("chosen");
+    target.classList.remove("glow");
     document.querySelector(`[data-feature='${feature}'`).classList.add("hide");
   }
 }
