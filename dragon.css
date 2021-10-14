@@ -27,13 +27,13 @@ h1 {
 
 h2 {
   font-family: "Eagle Lake", cursive;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   margin-bottom: 1vw;
 }
 
 h3 {
   font-family: "Eagle Lake", cursive;
-  font-size: 1rem;
+  font-size: 1vw;
   margin-bottom: 0.5vw;
   margin-top: -3vw;
 }
@@ -245,10 +245,10 @@ h3 {
 #cirkle {
   background-image: url(images/circle.png);
   background-size: cover;
-  width: 8vw;
-  height: 8vw;
-  margin-top: -18vw;
-  margin-left: 88vw;
+  width: 9vw;
+  height: 9vw;
+  margin-top: -20vw;
+  margin-left: 87vw;
 
   animation: glow_kf 20s infinite linear;
 }
@@ -260,7 +260,7 @@ h3 {
   background-size: cover;
   width: 8vw;
   height: 8vw;
-  margin-top: -39vw;
+  margin-top: -38vw;
   margin-left: 61vw;
 
   animation: glow_kf 20s infinite linear;
@@ -268,7 +268,7 @@ h3 {
 
 @keyframes glow_kf {
   0% {
-    filter: drop-shadow(0px 0px 0.1vw rgb(119, 0, 255));
+    filter: drop-shadow(0px 0px 0.1vw rgb(0, 17, 255));
     transform: rotate(0deg);
   }
   50% {
