@@ -79,12 +79,12 @@ function toggleOption(event) {
       .querySelector(`[data-feature='${feature}'`)
       .classList.remove("hide");
 
-    const firstFrame = document
-      .querySelector(`[data-feature='${feature}'`)
-      .getBoundingClientRect();
+    const firstFrame = target.getBoundingClientRect();
     console.log(firstFrame);
 
-    const lastFrame = target.getBoundingClientRect();
+    const lastFrame = document
+      .querySelector(`[data-feature='${feature}'`)
+      .getBoundingClientRect();
     console.log(lastFrame);
 
     const deltaX = firstFrame.left - lastFrame.left;
