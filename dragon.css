@@ -183,8 +183,6 @@ h2 {
   height: 3vw;
   cursor: pointer;
   border-radius: 6vw;
-  position: absolute;
-  background-color: red;
 }
 
 .neckCrystalsX,

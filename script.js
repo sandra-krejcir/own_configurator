@@ -80,6 +80,7 @@ function toggleOption(event) {
     const newPic = document.createElement("img");
     newPic.src = `images/${feature}.png`;
     newPic.classList.add(`${feature}X`);
+    newPic.style.position = "absolute";
     document.querySelector("body").appendChild(newPic);
 
     newPic.style.left = `${lastFrame.left}px`;
@@ -94,8 +95,8 @@ function toggleOption(event) {
       .getBoundingClientRect();
     //console.log("Last frame", lastFrame);
 
-    const deltaX = firstFrame.left - lastFrame.left;
-    const deltaY = firstFrame.top - lastFrame.top;
+    const deltaX = firstFrame.left - lastFrame.left + 30;
+    const deltaY = firstFrame.top - lastFrame.top + 60;
     /*const deltaWidth = firstFrame.width / lastFrame.width;
     const deltaHeight = firstFrame.height / lastFrame.height;*/
 
@@ -107,7 +108,7 @@ function toggleOption(event) {
         {
           transformOrigin: "top left",
           transform: `translateX(${deltaX}px)
-      translateY(${deltaY}px)`,
+      translateY(${deltaY}pX)`,
         },
       ],
       {
@@ -120,7 +121,7 @@ function toggleOption(event) {
       document
         .querySelector(`[data-feature='${feature}'`)
         .classList.remove("hide");
-      //document.querySelector("body").removeChild(newPic);
+      document.querySelector("body").removeChild(newPic);
     };
   } else {
     features[feature] = false;
