@@ -14,6 +14,10 @@ async function start() {
   let response = await fetch("theDragon-01.svg");
   let mySvgData = await response.text();
   document.querySelector("#dragonPart").innerHTML = mySvgData;
+  const topPoint = document.createElement("div");
+  topPoint.setAttribute("id", "middleFrame");
+  document.querySelector("#dragonPart").appendChild(topPoint);
+
   document
     .querySelectorAll(".feature-option")
     .forEach((option) => option.addEventListener("click", toggleOption));
@@ -71,27 +75,20 @@ function toggleOption(event) {
     target.classList.add("glow");
     console.log(features[feature]);
 
-    document
-      .querySelector(`[data-feature='${feature}'`)
-      .classList.remove("hide");
-
-    const firstFrame = document
-      .querySelector(`[data-feature='${feature}'`)
-      .getBoundingClientRect();
-    if (feature === "saddle") {
-      firstFrame.x = 220;
-      firstFrame.y = 220;
-    }
-    console.log("First frame", firstFrame);
-
-    const lastFrame = target.getBoundingClientRect();
-    console.log("Last frame", lastFrame);
-
     const newPic = document.createElement("img");
     newPic.src = `images/${feature}.png`;
     newPic.classList.add(`${feature}X`);
     newPic.style.position = "absolute";
     document.querySelector("body").appendChild(newPic);
+
+    const firstFrame = document
+      .querySelector("#middleFrame")
+      .getBoundingClientRect();
+
+    console.log("First frame to middle", firstFrame);
+
+    const lastFrame = target.getBoundingClientRect();
+    console.log("Last frame to middle", lastFrame);
 
     newPic.style.left = `${lastFrame.left}px`;
     newPic.style.top = `${lastFrame.top}px`;
@@ -100,12 +97,10 @@ function toggleOption(event) {
 
     console.log("newPic", newPic);
 
-    const deltaX = firstFrame.left - lastFrame.left + 30;
-    const deltaY = firstFrame.top - lastFrame.top + 60;
+    const deltaX = firstFrame.left - lastFrame.left - 20;
+    const deltaY = firstFrame.top - lastFrame.top - 30;
 
-    document.querySelector(`[data-feature='${feature}'`).classList.add("hide");
-
-    const picAnime = newPic.animate(
+    const beginningAnime = newPic.animate(
       [
         { transformOrigin: "top left", transform: "none" },
         {
@@ -115,16 +110,65 @@ function toggleOption(event) {
         },
       ],
       {
-        duration: 600,
-        easing: "ease-in-out",
+        duration: 900,
+        easing: "ease-in",
       }
     );
 
-    picAnime.onfinish = function () {
+    beginningAnime.onfinish = function () {
       document
         .querySelector(`[data-feature='${feature}'`)
         .classList.remove("hide");
-      document.querySelector("body").removeChild(newPic);
+
+      const firstFrame = document
+        .querySelector(`[data-feature='${feature}'`)
+        .getBoundingClientRect();
+      if (feature === "saddle") {
+        firstFrame.x = 220;
+        firstFrame.y = 230;
+      }
+      console.log("First frame", firstFrame);
+
+      const lastFrame = document
+        .querySelector("#middleFrame")
+        .getBoundingClientRect();
+      console.log("Last frame", lastFrame);
+
+      newPic.style.left = `${lastFrame.left - 20}px`;
+      newPic.style.top = `${lastFrame.top - 30}px`;
+      newPic.style.width = `${lastFrame.width}px`;
+      newPic.style.height = `${lastFrame.height}px`;
+
+      console.log("newPic", newPic);
+
+      const deltaX = firstFrame.left - lastFrame.left + 40;
+      const deltaY = firstFrame.top - lastFrame.top + 70;
+
+      document
+        .querySelector(`[data-feature='${feature}'`)
+        .classList.add("hide");
+
+      const endAnime = newPic.animate(
+        [
+          { transformOrigin: "top left", transform: "none" },
+          {
+            transformOrigin: "top left",
+            transform: `translateX(${deltaX}px)
+      translateY(${deltaY}pX)`,
+          },
+        ],
+        {
+          duration: 200,
+          easing: "ease-out",
+        }
+      );
+
+      endAnime.onfinish = function () {
+        document
+          .querySelector(`[data-feature='${feature}'`)
+          .classList.remove("hide");
+        document.querySelector("body").removeChild(newPic);
+      };
     };
   } else {
     features[feature] = false;

@@ -299,3 +299,12 @@ h3 {
     transform: rotate(360deg);
   }
 }
+
+#middleFrame {
+  position: absolute;
+  top: 3vw;
+  left: 49vw;
+  height: 7vw;
+  width: 7vw;
+  background-color: transparent;
+}
