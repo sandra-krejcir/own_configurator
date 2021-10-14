@@ -70,22 +70,29 @@ function toggleOption(event) {
     target.classList.add("chosen");
     console.log(features[feature]);
 
-    const newPic = document.createElement("img");
-    newPic.src = `images/${feature}.png`;
-    newPic.classList.add(`${feature}X`);
-    document.querySelector(`.${feature}`).appendChild(newPic);
-
     document
       .querySelector(`[data-feature='${feature}'`)
       .classList.remove("hide");
 
-    const firstFrame = target.getBoundingClientRect();
-    console.log(firstFrame);
+    const lastFrame = target.getBoundingClientRect();
+    //console.log("First frame", firstFrame);
 
-    const lastFrame = document
+    const newPic = document.createElement("img");
+    newPic.src = `images/${feature}.png`;
+    newPic.classList.add(`${feature}X`);
+    document.querySelector("body").appendChild(newPic);
+
+    newPic.style.left = `${lastFrame.left}px`;
+    newPic.style.top = `${lastFrame.top}px`;
+    newPic.style.width = `${lastFrame.width}px`;
+    newPic.style.height = `${lastFrame.height}px`;
+
+    console.log("newPic", newPic);
+
+    const firstFrame = document
       .querySelector(`[data-feature='${feature}'`)
       .getBoundingClientRect();
-    console.log(lastFrame);
+    //console.log("Last frame", lastFrame);
 
     const deltaX = firstFrame.left - lastFrame.left;
     const deltaY = firstFrame.top - lastFrame.top;
@@ -96,12 +103,12 @@ function toggleOption(event) {
 
     const picAnime = newPic.animate(
       [
+        { transformOrigin: "top left", transform: "none" },
         {
           transformOrigin: "top left",
           transform: `translateX(${deltaX}px)
       translateY(${deltaY}px)`,
         },
-        { transformOrigin: "top left", transform: "none" },
       ],
       {
         duration: 600,
@@ -113,7 +120,7 @@ function toggleOption(event) {
       document
         .querySelector(`[data-feature='${feature}'`)
         .classList.remove("hide");
-      document.querySelector(`.${feature}`).removeChild(newPic);
+      //document.querySelector("body").removeChild(newPic);
     };
   } else {
     features[feature] = false;
